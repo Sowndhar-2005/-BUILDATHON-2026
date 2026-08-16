@@ -66,56 +66,54 @@ Traditional institutional software suffers from fragmented workflows:
 
 ## 🗺️ System Architecture & Workflow Map
 
-Conforming to the **Pseudo Map Workflow** (`qai1jl11aibck8vesjnt.jpg`), the system operates across unified academic and AI pipelines:
+Conforming to the official **Pseudo Map Specification**, EduVision AI unifies all academic operations and AI feedback loops:
 
-```mermaid
-flowchart TD
-    subgraph Public["🌐 Public Portal"]
-        A[Home Page] --> B[Course Catalog]
-        B --> C[Course Syllabus Details]
-        A --> D[Contact & Helpdesk]
-        A --> E[JWT Login / Register]
-    end
+<div align="center">
+  <img src="qai1jl11aibck8vesjnt.jpg" alt="Official Pseudo Map — Education Management Portal" width="100%" style="border-radius: 12px; border: 1px solid #334155; margin-bottom: 24px;" />
+</div>
 
-    subgraph Auth["🔐 Role-Based Access Control"]
-        E -->|Role: Student| S_Dash[Student Portal]
-        E -->|Role: Teacher / Mentor| T_Dash[Teacher Hub]
-        E -->|Role: Admin| A_Dash[Admin Command]
-    end
+### 🔄 End-to-End Operational Pipeline
 
-    subgraph StudentFlow["🎓 Student Experience"]
-        S_Dash --> S_Courses[Enrolled Curriculum & Notes]
-        S_Dash --> S_Assign[Worksheet Submission & AI Rubric]
-        S_Dash --> S_Att[Attendance Log & 75% Warning]
-        S_Dash --> S_Grades[Grades Transcript 25/75/100]
-        S_Dash --> S_AI[AI Progress & Topic Diagnostics]
-        S_Dash --> S_Rep[Section 10 Printable Report]
-    end
-
-    subgraph TeacherFlow["👨‍🏫 Faculty & Mentorship"]
-        T_Dash --> T_Subj[Subject & Notes Management]
-        T_Dash --> T_Config[Assessment Scheme Config /25]
-        T_Dash --> T_Grades[Live Grade Entry Stream]
-        T_Dash --> T_Att[Daily Roll Call Register]
-        T_Dash --> T_Roster[Class Mentorship & Risk Badges]
-    end
-
-    subgraph AdminFlow["🏛️ Academic Leadership"]
-        A_Dash --> A_Users[User Directory & Role Governance]
-        A_Dash --> A_Setup[Courses, Classes & Subjects Setup]
-        A_Dash --> A_Analytics[Institutional Analytics & Pass Rates]
-        A_Dash --> A_Risk[Campus Early Warning & Dispatcher]
-    end
-
-    subgraph Engine["🧠 AI Academic Intelligence Engine"]
-        S_Assign & S_Att & T_Grades --> AI_Calc[Multi-Factor Risk Scoring Engine]
-        AI_Calc --> AI_Weak[Weak Syllabus Topic Clustering]
-        AI_Calc --> AI_Tips[Daily Cognitive Study Strategies]
-        AI_Calc --> S_AI & S_Rep & T_Roster & A_Risk
-    end
+```
++---------------------------------------------------------------------------------------------------+
+|                                       🌐 PUBLIC & ONBOARDING                                      |
+|   • Landing Page / Announcements  • 5-Unit Course Catalog  • Syllabus Timetable  • Helpdesk FAQ   |
++---------------------------------------------------------------------------------------------------+
+                                                  │
+                                                  ▼
++---------------------------------------------------------------------------------------------------+
+|                                 🔐 SECURE JWT AUTHENTICATION (OAuth2)                             |
+|       [ Role: Student ]                  [ Role: Teacher / Mentor ]             [ Role: Admin ]    |
++---------------------------------------------------------------------------------------------------+
+         │                                             │                                     │
+         ▼                                             ▼                                     ▼
++─────────────────────────────+       +─────────────────────────────+       +───────────────────────+
+|      🎓 STUDENT PORTAL      |       |      👨‍🏫 TEACHER WORKSPACE    |       |   🏛️ ADMIN COMMAND     |
+| • Enrolled Subjects & Notes |       | • Custom /25 Scheme Config  |       | • User Management     |
+| • Assignment Submissions    |       | • Live 25/75/100 Mark Entry |       | • Academic Catalog    |
+| • Attendance Log (<75% Flag)|       | • One-Click Roll Call Log   |       | • Campus Pass Rates   |
+| • Official 25/75 Transcript |       | • Class Mentorship Roster   |       | • Early Warning Radar |
+| • AI Learning Diagnoser     |       | • Notes & Syllabus Manager  |       | • Mentor Alert Dispatch|
++─────────────────────────────+       +─────────────────────────────+       +───────────────────────+
+         │                                             │                                     │
+         └──────────────────────────────┬──────────────┴─────────────────────────────────────┘
+                                        ▼
++---------------------------------------------------------------------------------------------------+
+|                                🧠 AI ACADEMIC INTELLIGENCE ENGINE                                 |
+|   • Continuous Multi-Factor Risk Assessment (<75% Attendance, Mark Deficits, Trajectory Trend)    |
+|   • Syllabus Topic Weakness Identification (Isolates exact conceptual gap e.g., SQL / Graphs)     |
+|   • Daily Cognitive Study Strategy Generator (Feynman Method, Spaced Retrieval, Pomodoro Cycles)  |
++---------------------------------------------------------------------------------------------------+
+                                        │
+                                        ▼
++---------------------------------------------------------------------------------------------------+
+|                        📄 SECTION 10 OFFICIAL PRINTABLE PERFORMANCE REPORT                        |
+|   • High-Fidelity Performance Transcript • Radar Competency Chart • Official Institutional Seal   |
++---------------------------------------------------------------------------------------------------+
 ```
 
 ---
+
 
 ## ✨ Core Capabilities by Role
 
