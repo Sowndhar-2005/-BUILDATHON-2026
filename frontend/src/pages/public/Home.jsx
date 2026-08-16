@@ -155,7 +155,152 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 2.5. Instant Hackathon Evaluation Hub */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-brand-500/20 bg-gradient-to-r from-slate-900 via-slate-950 to-indigo-950/50 shadow-2xl space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <span className="p-1 rounded bg-amber-500/20 text-amber-300 font-bold uppercase text-[10px] tracking-wider border border-amber-500/30">
+                  BUILDATHON 2026 Evaluation
+                </span>
+                <span className="text-xs text-brand-400 font-semibold">• 1-Click Role Switcher</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Instant Role-Based Demo Evaluation
+              </h2>
+              <p className="text-xs text-slate-400">
+                Click any role card below to log in automatically and evaluate the full academic experience.
+              </p>
+            </div>
+            <Link to="/login" className="btn-secondary !py-2 !px-4 text-xs shrink-0 self-start sm:self-auto">
+              View All Credentials <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+            
+            {/* Student At Risk */}
+            <Link
+              to="/login"
+              className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-rose-500/50 hover:bg-slate-850 transition-all duration-200 group flex flex-col justify-between space-y-3"
+            >
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                    Student (At-Risk)
+                  </span>
+                </div>
+                <h3 className="font-bold text-sm text-white group-hover:text-rose-300 transition-colors">
+                  Rahul Verma
+                </h3>
+                <p className="text-[11px] text-slate-400 leading-snug">
+                  68% attendance deficit, weak SQL/Algorithms, active AI action plan.
+                </p>
+              </div>
+              <span className="text-[10px] font-mono text-brand-400 group-hover:underline flex items-center gap-1">
+                student.rahul@portal.edu &rarr;
+              </span>
+            </Link>
+
+            {/* Student Topper */}
+            <Link
+              to="/login"
+              className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-850 transition-all duration-200 group flex flex-col justify-between space-y-3"
+            >
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    Student (Topper)
+                  </span>
+                </div>
+                <h3 className="font-bold text-sm text-white group-hover:text-emerald-300 transition-colors">
+                  Priya Sundaram
+                </h3>
+                <p className="text-[11px] text-slate-400 leading-snug">
+                  95% marks, Distinction (O Grade), 96% attendance, top trajectory.
+                </p>
+              </div>
+              <span className="text-[10px] font-mono text-brand-400 group-hover:underline flex items-center gap-1">
+                student.priya@portal.edu &rarr;
+              </span>
+            </Link>
+
+            {/* Subject Teacher */}
+            <Link
+              to="/login"
+              className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500/50 hover:bg-slate-850 transition-all duration-200 group flex flex-col justify-between space-y-3"
+            >
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                    Subject Faculty
+                  </span>
+                </div>
+                <h3 className="font-bold text-sm text-white group-hover:text-indigo-300 transition-colors">
+                  Prof. Vikram Sharma
+                </h3>
+                <p className="text-[11px] text-slate-400 leading-snug">
+                  Configures /25 component weights, enters marks, publishes notes.
+                </p>
+              </div>
+              <span className="text-[10px] font-mono text-brand-400 group-hover:underline flex items-center gap-1">
+                teacher.sharma@portal.edu &rarr;
+              </span>
+            </Link>
+
+            {/* Class Mentor */}
+            <Link
+              to="/login"
+              className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-850 transition-all duration-200 group flex flex-col justify-between space-y-3"
+            >
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                    Class Mentor
+                  </span>
+                </div>
+                <h3 className="font-bold text-sm text-white group-hover:text-cyan-300 transition-colors">
+                  Dr. Ananya Kumar
+                </h3>
+                <p className="text-[11px] text-slate-400 leading-snug">
+                  Conducts daily roll call, monitors cohort risk radar, audits report cards.
+                </p>
+              </div>
+              <span className="text-[10px] font-mono text-brand-400 group-hover:underline flex items-center gap-1">
+                mentor.kumar@portal.edu &rarr;
+              </span>
+            </Link>
+
+            {/* Dean / Admin */}
+            <Link
+              to="/login"
+              className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/50 hover:bg-slate-850 transition-all duration-200 group flex flex-col justify-between space-y-3"
+            >
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                    Dean / Admin
+                  </span>
+                </div>
+                <h3 className="font-bold text-sm text-white group-hover:text-amber-300 transition-colors">
+                  Dr. Rajeshwari S.
+                </h3>
+                <p className="text-[11px] text-slate-400 leading-snug">
+                  Campus-wide pass rates, early warning radar, user provisioning.
+                </p>
+              </div>
+              <span className="text-[10px] font-mono text-brand-400 group-hover:underline flex items-center gap-1">
+                admin@portal.edu &rarr;
+              </span>
+            </Link>
+
+          </div>
+        </div>
+      </section>
+
       {/* 3. Featured Courses Section */}
+
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>

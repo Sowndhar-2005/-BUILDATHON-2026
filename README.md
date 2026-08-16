@@ -284,15 +284,21 @@ npm run dev
 
 ## 👥 Pre-Seeded Hackathon Evaluation Accounts
 
-The portal database automatically initializes with rich, realistic student cohorts, subject faculty, class mentors, and administrative accounts:
+The portal database automatically initializes with rich, realistic student cohorts, subject faculty, class mentors, and administrative accounts. You can log in manually using the credentials below, or click any card on the **1-Click Evaluation Hub** at `http://localhost:5173/login`:
 
-| User Persona | Email Address | Password | Role | Key Academic Highlights |
+| User Persona | Email Address | Password | Role | Key Academic Highlights & Evaluation Objectives |
 |---|---|---|---|---|
-| **Rahul Verma** *(Student)* | `student.rahul@portal.edu` | `Student@123` | `student` | **Flagged as At-Risk**: 68% DBMS attendance deficit, weak SQL/Algorithms scores, active AI intervention plan |
-| **Priya Sundaram** *(Student)* | `student.priya@portal.edu` | `Student@123` | `student` | **Class Topper**: 95% average marks, Distinction (O Grade), 96% attendance, exemplary AI trajectory |
-| **Prof. Vikram Sharma** *(Faculty)* | `teacher.sharma@portal.edu` | `Teacher@123` | `teacher` | **Subject Faculty (DBMS)**: Configures /25 assessment schemes, publishes course notes, enters student marks |
-| **Dr. Ananya Kumar** *(Mentor)* | `mentor.kumar@portal.edu` | `Teacher@123` | `teacher` | **Class Mentor (CSE 2026)**: Monitors cohort risk levels, conducts roll calls, audits Section 10 report cards |
-| **Dr. Rajeshwari Swaminathan** *(Dean)* | `admin@portal.edu` | `Admin@123` | `admin` | **Dean of Academic Affairs**: Institutional pass analytics, campus-wide risk radar, user provisioning |
+| **Rahul Verma**<br>*(Student - At Risk)* | `student.rahul@portal.edu` | `Student@123` | `student` | • **Identified as Academic Risk**: 68% DBMS attendance deficit (<75% warning).<br>• Weak marks in SQL and Divide & Conquer.<br>• Active AI study intervention plan with daily schedule. |
+| **Priya Sundaram**<br>*(Student - Topper)* | `student.priya@portal.edu` | `Student@123` | `student` | • **Class Topper**: 95% overall average marks, Distinction (**O Grade**).<br>• 96% overall attendance, optimal trajectory trend.<br>• Printable Section 10 transcript with honors. |
+| **Prof. Vikram Sharma**<br>*(Subject Faculty)* | `teacher.sharma@portal.edu` | `Teacher@123` | `teacher` | • **DBMS Subject Professor**: Configures custom /25 internal assessment weight schemes.<br>• Publishes syllabus lecture notes and handouts.<br>• Live mark entry stream with 25/75/100 conversion. |
+| **Dr. Ananya Kumar**<br>*(Class Mentor)* | `mentor.kumar@portal.edu` | `Teacher@123` | `teacher` | • **B.Tech CSE Class Mentor**: Conducts daily 1-click batch roll call.<br>• Real-time cohort risk monitoring with student audit modals.<br>• Verifies official Section 10 performance reports. |
+| **Dr. Rajeshwari S.**<br>*(Dean / Admin)* | `admin@portal.edu` | `Admin@123` | `admin` | • **Dean of Academic Affairs**: Institutional pass rate analytics & department benchmarks.<br>• Campus-wide Early Warning Radar and mentor alert dispatching.<br>• Provisioning users and course catalogs. |
+
+### ⚡ Quick Evaluation Flow:
+1. Navigate to **[`http://localhost:5173/login`](http://localhost:5173/login)** or the **Home Page**.
+2. Click on **Rahul Verma (At-Risk)** &rarr; Inspect the **AI Risk Badge**, the **Attendance warning (<75%)**, and the **Weak Subject Chapters**.
+3. Log out and click **Prof. Vikram Sharma** &rarr; Go to **Assessment Config** to adjust the 25-mark formula, or **Grade Entry** to test live 25/75/100 calculations.
+4. Log out and click **Dr. Rajeshwari (Admin)** &rarr; Go to **Risk Monitor** to view campus-wide early warnings and dispatch mentor interventions.
 
 ---
 
