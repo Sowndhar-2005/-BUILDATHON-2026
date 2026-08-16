@@ -11,9 +11,17 @@
 [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.0_Async-d71f00?style=for-the-badge&logo=sqlalchemy&logoColor=white)](https://www.sqlalchemy.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4+-38bdf8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 
-**An intelligent, end-to-end academic operations and risk-intervention ecosystem conforming to the official BUILDATHON 2026 Problem Statement and Implementation Specification.**
+<p align="center">
+  <a href="http://localhost:8000/docs"><img src="https://img.shields.io/badge/📖_Live_API_Docs-Swagger_UI-009688?style=for-the-badge" alt="API Docs"></a>
+  <a href="http://localhost:5173"><img src="https://img.shields.io/badge/💻_Web_Client-localhost:5173-6366f1?style=for-the-badge" alt="Web Client"></a>
+  <a href="#-automated-verification--test-suite"><img src="https://img.shields.io/badge/🧪_Automated_Tests-100%25_Passing-22c55e?style=for-the-badge" alt="Test Suite"></a>
+</p>
 
-[Live API Docs (`Swagger`)](http://localhost:8000/docs) • [Web Client](http://localhost:5173) • [Test Suite](#-automated-verification--test-suite)
+<p align="center">
+  <a href="http://localhost:8000/docs"><b>Live API Docs (Swagger)</b></a> • 
+  <a href="http://localhost:5173"><b>Web Client Portal</b></a> • 
+  <a href="#-automated-verification--test-suite"><b>Automated Test Suite</b></a>
+</p>
 
 </div>
 
