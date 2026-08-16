@@ -67,8 +67,9 @@ Traditional institutional software suffers from fragmented workflows:
 Conforming to the official **Pseudo Map Specification**, EduVision AI unifies all academic operations and AI feedback loops:
 
 <div align="center">
-  <img src="qai1jl11aibck8vesjnt.jpg" alt="Official Pseudo Map — Education Management Portal" width="100%" style="border-radius: 12px; border: 1px solid #334155; margin-bottom: 24px;" />
+  <img src="System%20Architecture.jpg" alt="Official Pseudo Map — Education Management Portal" width="100%" style="border-radius: 12px; border: 1px solid #334155; margin-bottom: 24px;" />
 </div>
+
 
 ### 🔄 End-to-End Operational Pipeline
 
