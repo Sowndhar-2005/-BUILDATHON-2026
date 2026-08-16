@@ -247,17 +247,19 @@ cd BUILDATHON-2026
 # Navigate to backend directory
 cd backend
 
-# Create and activate Python virtual environment
-python -m venv venv
-# Windows:
-.\venv\Scripts\activate
+# Option A: Direct Launch with Python 3.13 (Fastest)
+py -3.13 run.py
+
+# Option B: Isolated Virtual Environment
+py -3.13 -m venv venv
+# Windows (PowerShell):
+.\venv\Scripts\Activate.ps1
+# Windows (CMD):
+.\venv\Scripts\activate.bat
 # Linux / macOS:
 source venv/bin/activate
 
-# Install Python dependencies
 pip install -r requirements.txt
-
-# Launch FastAPI Server (Database auto-seeds on first startup)
 python run.py
 ```
 > 🌐 **Backend API:** `http://localhost:8000`  
