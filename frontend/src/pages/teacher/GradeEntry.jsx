@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Award, Calculator, Save, CheckCircle2, AlertCircle, BookOpen, UserCheck, ArrowRight } from 'lucide-react';
+import { Award, Calculator, Save, CheckCircle2, AlertCircle, BookOpen, UserCheck, ArrowRight, Download, FileSpreadsheet } from 'lucide-react';
 import { api } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
 import { LoadingSpinner } from '../../components/common/StatCard';
@@ -116,6 +116,31 @@ export default function GradeEntry() {
   };
 
 
+  const handleExportCSV = () => {
+    const currentStudent = students.find(s => s.id === selectedStudentId);
+    const currentSubject = subjects.find(s => s.id === selectedSubjectId);
+    const headers = ['Student ID', 'Full Name', 'Enrollment Number', 'Internal (/25)', 'External Raw (/100)', 'External Converted (/75)', 'Final (/100)', 'Grade'];
+    const row = [
+      currentStudent?.id || '',
+      `"${currentStudent?.full_name || ''}"`,
+      currentStudent?.enrollment_number || '',
+      live.internal25,
+      formData.external_raw_100,
+      live.extConverted75,
+      live.final100,
+      live.grade
+    ];
+    const csvContent = "data:text/csv;charset=utf-8," + [headers.join(','), row.join(',')].join('\n');
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `Grade_Entry_${currentSubject?.code || 'Subject'}_Student_${currentStudent?.id || 'ID'}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    toast.success("CSV Grade Record exported successfully!");
+  };
+
   if (loading) return <LoadingSpinner text="Initializing Grade Entry & Conversion Engine..." />;
 
   const currentStudent = students.find(s => s.id === selectedStudentId);
@@ -124,14 +149,25 @@ export default function GradeEntry() {
   return (
     <div className="space-y-8 max-w-5xl mx-auto">
       
-      <div>
-        <h1 className="text-2xl font-extrabold text-white flex items-center gap-2.5">
-          <Award className="w-7 h-7 text-brand-400" />
-          Faculty Marks Entry & 25/75 Mark Conversion
-        </h1>
-        <p className="text-xs text-slate-400 mt-1">
-          Record continuous internal scores and semester external marks with real-time conversion and grade attribution.
-        </p>
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2.5">
+            <Award className="w-7 h-7 text-brand-500 dark:text-brand-400" />
+            Faculty Marks Entry & 25/75 Mark Conversion
+          </h1>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+            Record continuous internal scores and semester external marks with real-time conversion and grade attribution.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          onClick={handleExportCSV}
+          className="btn-secondary !py-2 !px-4 text-xs flex items-center gap-2"
+          title="Export current candidate grade calculation to CSV file"
+        >
+          <FileSpreadsheet className="w-4 h-4 text-emerald-500" /> Export CSV Record
+        </button>
       </div>
 
       {/* Target Selector Bar */}

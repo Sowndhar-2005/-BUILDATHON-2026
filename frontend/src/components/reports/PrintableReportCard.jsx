@@ -1,12 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 import { 
   Printer, Download, GraduationCap, CheckCircle2, 
-  AlertTriangle, Sparkles, TrendingUp, BookOpen, ShieldAlert
+  AlertTriangle, Sparkles, TrendingUp, BookOpen, ShieldAlert, FileText
 } from 'lucide-react';
 import { RiskBadge } from '../common/StatCard';
 
 export default function PrintableReportCard({ reportData, onPrint }) {
   const reportRef = useRef(null);
+  const [downloadingPDF, setDownloadingPDF] = useState(false);
 
   if (!reportData) return null;
 
@@ -14,6 +17,29 @@ export default function PrintableReportCard({ reportData, onPrint }) {
 
   const handlePrint = () => {
     window.print();
+  };
+
+  const handleExportPDF = async () => {
+    if (!reportRef.current) return;
+    setDownloadingPDF(true);
+    try {
+      const canvas = await html2canvas(reportRef.current, { 
+        scale: 2, 
+        useCORS: true,
+        backgroundColor: '#0f172a'
+      });
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save(`EduVision_Report_Card_${student?.enrollment_number || 'STU'}.pdf`);
+    } catch (err) {
+      console.error("Failed to generate PDF canvas:", err);
+      window.print();
+    } finally {
+      setDownloadingPDF(false);
+    }
   };
 
   return (
@@ -32,10 +58,17 @@ export default function PrintableReportCard({ reportData, onPrint }) {
 
         <div className="flex items-center gap-3">
           <button 
-            onClick={handlePrint} 
+            onClick={handleExportPDF} 
+            disabled={downloadingPDF}
             className="btn-primary !py-2 !px-4 text-xs flex items-center gap-2 shadow-glow-brand"
           >
-            <Printer className="w-4 h-4" /> Print / Download PDF
+            <Download className="w-4 h-4" /> {downloadingPDF ? 'Generating PDF...' : 'Download PDF Transcript'}
+          </button>
+          <button 
+            onClick={handlePrint} 
+            className="btn-secondary !py-2 !px-4 text-xs flex items-center gap-2"
+          >
+            <Printer className="w-4 h-4" /> Print / System Dialog
           </button>
         </div>
       </div>
